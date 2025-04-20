@@ -1,1 +1,2 @@
-
+Xuan Ma, Fabio Rizzoglio, Kevin L Bodkin, Eric Perreault, Lee E Miller, and Ann Kennedy, “Using adversarial networks to extend brain computer interface decoding accuracy over time,” eLife, vol. 12, no. e84296, pp. 1-28, 2023.
+Joseph E O’Doherty, MMB Cardoso, JG Makin, and PN Sabes, “Nonhuman primate reaching with multichannel sensorimotor cortex electrophysiology,” 2017. [Online]. Available: https://zenodo.org/record/583331.
