@@ -1,9 +1,39 @@
 # **M**asked __**U**__-Net-Based **C**ycle-Consistent **A**dversarial **N**etworks (MUCAN) - PyTorch
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)  
 
-This work implements the following paper for intracortical brain-computer interfaces, which is currently under review.  
-"Robust Motor Decoding Using Distribution Alignment Without Recalibrating Intracortical Brain-Computer Interfaces," under review, 2025.
+
+## 🚀 What is MUCAN?
+
+**MUCAN** is a deep learning framework designed to make **intracortical brain-computer interfaces (iBCIs)** more stable, reliable, and adaptable—without the need for daily recalibration.
+
+In real-world BCI systems, decoding motor intentions from neural signals becomes challenging due to biological changes and electrode variability over time. MUCAN tackles this by aligning the distribution of neural signals across sessions using a novel masked U-Net architecture design.
+
+---
+
+## 🧠 Why does this matter?
+
+Traditional decoders require **frequent supervised recalibration**, which is time-consuming and not user-friendly. MUCAN enables:
+
+- **Unsupervised domain adaptation** across days/sessions
+- Improved decoder robustness to neural signal drift
+- More efficient training
 
 
-## ABSTRACT
-Intracortical brain-computer interfaces (iBCIs) allow paralyzed individuals to regain motor functions by translating neural activity into control commands for assistive devices. However, neural variability caused by biological factors and electrode connectivity issues disrupts the mapping between neural signals and motor outputs, reducing decoding performance. Recalibrating the neural decoder in a supervised manner on subsequent days can mitigate the effects of this variability. However, this process often requires specialized personnel to operate the recording systems and obtain labeled data, posing practical challenges. To address this issue, we propose Masked U-net-based Cycle-consistent Adversarial Networks (MUCAN), a framework designed to maintain the neural-to-kinematic mapping by aligning daily neural activity distributions with a reference day, thereby eliminating the need for recalibration. MUCAN employs a masking strategy to extract features that remain consistent across days, effectively mitigating daily variability in neural recording conditions. Additionally, it leverages the U-Net architecture to extract hierarchical features and preserve fine-grained details of the neural activity, ensuring accurate distribution alignment. Experimental results demonstrate that MUCAN successfully maintains the neural-to-kinematic mapping and outperforms state-of-the-art iBCIs across eight publicly available nonhuman primate datasets. It also remains robust against neural signal loss due to unexpectedly disabled recording channels. By projecting firing rates onto the first two principal components for visualizing latent trajectories, MUCAN effectively preserves the underlying structure of neural population activity over time. This study presents a reliable solution to the challenges posed by neural variability while maintaining decoding performance without the need for continuous neural decoder recalibration.
+---
+
+## 🧪 Quick Demo (from `tutorial.ipynb`)
+
+### 🔹 Steps demonstrated in the tutorial:
+
+1. **Load a sample dataset**
+   - Neural recordings from the `Jango_ISO_2015` set are used.
+   - Each `.npz` file contains neural firing rates and kinematics.
+
+2. **Training processes**
+   - Use `WienerFilter` (a ridge regression baseline) for initial decoding.
+   - Apply the `Aligner` model (MUCAN's core) to perform alignment between source and target sessions.
+
+3. **Visualize decoding performance**
+   - Evaluate R² score after alignment by MUCAN.
+
+
